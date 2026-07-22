@@ -1,6 +1,6 @@
 # Feyz — Privacy Policy
 
-Official privacy policy for the **Feyz** mobile application by **AvenUp**.
+Official privacy policy for the **Feyz** mobile application by **Baron Soft**.
 
 - 📱 Android package: `com.feyz.app`
 - 🌍 Languages: Türkçe + English
@@ -16,4 +16,4 @@ This document URL is used in:
 
 ## Contact
 
-support@avenup.com
+hasancelikjob@gmail.com
