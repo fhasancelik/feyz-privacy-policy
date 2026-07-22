@@ -2,9 +2,9 @@
 
 **App / Uygulama:** Feyz
 **Package / Paket Adı:** `com.feyz.app`
-**Publisher / Yayıncı:** AvenUp
-**Effective Date / Yürürlük Tarihi:** 19 April 2026
-**Contact / İletişim:** support@avenup.com
+**Publisher / Yayıncı:** Baron Soft (Hasan Çelik)
+**Effective Date / Yürürlük Tarihi:** 22 July 2026
+**Contact / İletişim:** hasancelikjob@gmail.com
 
 ---
 
@@ -12,7 +12,7 @@
 
 ### 1. Giriş
 
-Bu gizlilik politikası, **AvenUp** ("biz", "bize", "bizim") tarafından geliştirilen **Feyz** mobil uygulamasının ("Uygulama") kullanımı sırasında toplanan, kullanılan ve korunan bilgileri açıklar. Uygulamayı kullanarak bu politikada belirtilen uygulamaları kabul etmiş olursunuz.
+Bu gizlilik politikası, **Baron Soft** ("biz", "bize", "bizim") tarafından geliştirilen **Feyz** mobil uygulamasının ("Uygulama") kullanımı sırasında toplanan, kullanılan ve korunan bilgileri açıklar. Uygulamayı kullanarak bu politikada belirtilen uygulamaları kabul etmiş olursunuz.
 
 ### 2. Topladığımız Bilgiler
 
@@ -24,6 +24,8 @@ Uygulamamız aşağıdaki bilgileri toplayabilir:
 - **Push Bildirim Tokenı:** Bildirim gönderebilmek için Firebase Cloud Messaging (FCM) tokenı (`@react-native-firebase/messaging`)
 - **Ağ Durumu:** Cihazın internet bağlantı durumu (`@react-native-community/netinfo`)
 - **Dil ve Bölge:** Cihazınızın varsayılan dili (`react-native-localize`)
+- **Reklam Tanımlayıcısı:** Reklam gösterebilmek için Google AdMob tarafından kullanılan reklam kimliği (iOS'ta IDFA, Android'de Reklam Kimliği). iOS'ta bu tanımlayıcıya yalnızca **açık izniniz** (App Tracking Transparency) varsa erişilir; izin vermezseniz kişiselleştirilmemiş reklam gösterilir.
+- **Reklam Etkileşimi:** Gösterim, tıklama ve ödüllü reklam tamamlama olayları (Google AdMob tarafından işlenir)
 
 #### 2.2 Kullanıcının Sağladığı Bilgiler
 
@@ -34,7 +36,7 @@ Uygulamamız aşağıdaki bilgileri toplayabilir:
 - Adınız, soyadınız, e-posta adresiniz veya telefon numaranız gibi kişisel kimlik bilgileri (PII)
 - Konum bilgisi (uygulama konum izni istemez ve kullanmaz)
 - Kameranız, mikrofonunuz, kişileriniz, fotoğraflarınız
-- Banka veya ödeme kartı bilgileri
+- Banka veya ödeme kartı bilgileri (abonelik ödemeleri tamamen Apple App Store / Google Play üzerinden yürütülür; kart bilgilerinizi görmeyiz)
 
 ### 3. Bilgilerin Kullanım Amacı
 
@@ -52,6 +54,7 @@ Uygulamamız aşağıdaki üçüncü taraf hizmetleri kullanır:
 
 | Hizmet | Amaç | Gizlilik Politikası |
 |---|---|---|
+| **Google AdMob** | Ücretsiz sürümde reklam gösterimi | [policies.google.com/technologies/ads](https://policies.google.com/technologies/ads) |
 | **Google Firebase (Cloud Messaging, App)** | Push bildirim ve uygulama altyapısı | [firebase.google.com/support/privacy](https://firebase.google.com/support/privacy) |
 | **Google Play Services** | Android dağıtımı ve servisler | [policies.google.com/privacy](https://policies.google.com/privacy) |
 | **Apple App Store** | iOS dağıtımı | [apple.com/legal/privacy](https://www.apple.com/legal/privacy/) |
@@ -77,11 +80,25 @@ Aşağıdaki haklara sahipsiniz:
 - İşlemeye itiraz etme veya kısıtlama talep etme
 - Şikâyetinizi yetkili veri koruma kurumuna iletme
 
-Talepleriniz için: **support@avenup.com**
+Talepleriniz için: **hasancelikjob@gmail.com**
 
-### 8. Reklam ve Analitik
+### 8. Reklam
 
-Uygulama içinde **üçüncü taraf reklam** gösterilmez ve **davranışsal takip yapılmaz.** Mevcut sürümde Analytics SDK aktif olarak veri toplamamaktadır.
+Uygulamanın **ücretsiz sürümünde Google AdMob aracılığıyla reklam gösterilir.** Reklam biçimleri: açılış reklamı, geçiş reklamı, banner ve ödüllü reklam.
+
+**Pro aboneliğiniz varsa hiçbir reklam gösterilmez ve reklam isteği dahi yapılmaz.**
+
+**Kişiselleştirme ve rızanız**
+
+- **Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de:** Google'ın User Messaging Platform (UMP) aracılığıyla ilk açılışta rızanız istenir. Kişiselleştirilmiş reklamlara izin vermezseniz yalnızca **kişiselleştirilmemiş** reklam gösterilir.
+- **iOS'ta:** Reklam tanımlayıcınıza (IDFA) yalnızca App Tracking Transparency izni verdiyseniz erişilir. İzin vermemeniz uygulamanın kullanımını hiçbir şekilde kısıtlamaz.
+- **Tercihlerinizi istediğiniz zaman** uygulama içinden **Profil → Reklam gizlilik tercihleri** bölümünden değiştirebilirsiniz.
+
+Google'ın reklam verilerini nasıl işlediğini [policies.google.com/technologies/ads](https://policies.google.com/technologies/ads) adresinden inceleyebilirsiniz.
+
+### 8.1 Analitik
+
+Mevcut sürümde ayrı bir analitik SDK'sı aktif olarak veri toplamamaktadır.
 
 ### 9. Politika Değişiklikleri
 
@@ -89,7 +106,7 @@ Bu politikayı zaman zaman güncelleyebiliriz. Önemli değişiklikler uygulama 
 
 ### 10. İletişim
 
-Sorularınız için: **support@avenup.com**
+Sorularınız için: **hasancelikjob@gmail.com**
 
 ---
 
@@ -97,7 +114,7 @@ Sorularınız için: **support@avenup.com**
 
 ### 1. Introduction
 
-This Privacy Policy describes how **AvenUp** ("we", "us", "our") collects, uses, and protects information when you use the **Feyz** mobile application (the "App"). By using the App, you agree to the practices described herein.
+This Privacy Policy describes how **Baron Soft** ("we", "us", "our") collects, uses, and protects information when you use the **Feyz** mobile application (the "App"). By using the App, you agree to the practices described herein.
 
 ### 2. Information We Collect
 
@@ -107,6 +124,8 @@ This Privacy Policy describes how **AvenUp** ("we", "us", "our") collects, uses,
 - **Push notification token:** Firebase Cloud Messaging (FCM) token used to deliver notifications (`@react-native-firebase/messaging`)
 - **Network state:** connectivity status (`@react-native-community/netinfo`)
 - **Locale:** device default language (`react-native-localize`)
+- **Advertising identifier:** the device advertising ID used by Google AdMob to serve ads (IDFA on iOS, Advertising ID on Android). On iOS this identifier is accessed **only with your explicit permission** via App Tracking Transparency; if you decline, you are served non-personalized ads.
+- **Ad interaction events:** impressions, clicks and rewarded-ad completions (processed by Google AdMob)
 
 #### 2.2 User-Provided
 
@@ -117,7 +136,7 @@ This Privacy Policy describes how **AvenUp** ("we", "us", "our") collects, uses,
 - Personally identifiable information (name, email, phone)
 - Location data (the app does not request or use location)
 - Camera, microphone, contacts, photos
-- Payment or banking information
+- Payment or banking information (subscription billing is handled entirely by Apple App Store / Google Play; we never see your card details)
 
 ### 3. How We Use Information
 
@@ -133,6 +152,7 @@ We use collected information only to:
 
 | Service | Purpose | Privacy Policy |
 |---|---|---|
+| **Google AdMob** | Serving ads in the free tier | [policies.google.com/technologies/ads](https://policies.google.com/technologies/ads) |
 | **Google Firebase (Cloud Messaging, App)** | Push notifications & app infra | [firebase.google.com/support/privacy](https://firebase.google.com/support/privacy) |
 | **Google Play Services** | Android distribution | [policies.google.com/privacy](https://policies.google.com/privacy) |
 | **Apple App Store** | iOS distribution | [apple.com/legal/privacy](https://www.apple.com/legal/privacy/) |
@@ -158,11 +178,25 @@ You have the right to:
 - Object to or restrict processing
 - File a complaint with your data protection authority
 
-Requests: **support@avenup.com**
+Requests: **hasancelikjob@gmail.com**
 
-### 8. Advertising & Analytics
+### 8. Advertising
 
-The App does **not** display third-party ads and does **not** perform behavioral tracking. No analytics SDK is actively collecting data in the current release.
+The **free tier of the App displays ads served by Google AdMob.** Formats used: app open, interstitial, banner and rewarded ads.
+
+**If you hold a Pro subscription, no ads are shown and no ad requests are made at all.**
+
+**Personalization and your consent**
+
+- **In the EEA, UK and Switzerland:** consent is requested on first launch through Google's User Messaging Platform (UMP). If you do not consent to personalized ads, only **non-personalized** ads are served.
+- **On iOS:** your advertising identifier (IDFA) is accessed only if you grant App Tracking Transparency permission. Declining does not restrict your use of the App in any way.
+- **You can change your choices at any time** in the App under **Profile → Ad privacy settings**.
+
+See how Google processes advertising data at [policies.google.com/technologies/ads](https://policies.google.com/technologies/ads).
+
+### 8.1 Analytics
+
+No separate analytics SDK is actively collecting data in the current release.
 
 ### 9. Changes to This Policy
 
@@ -170,8 +204,8 @@ We may update this policy from time to time. Material changes will be announced 
 
 ### 10. Contact
 
-Questions: **support@avenup.com**
+Questions: **hasancelikjob@gmail.com**
 
 ---
 
-_Last updated: 19 April 2026_
+_Last updated: 22 July 2026_
