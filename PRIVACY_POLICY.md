@@ -3,7 +3,7 @@
 **App / Uygulama:** Feyz
 **Package / Paket Adı:** `com.feyz.app`
 **Publisher / Yayıncı:** Baron Soft (Hasan Çelik)
-**Effective Date / Yürürlük Tarihi:** 22 July 2026
+**Effective Date / Yürürlük Tarihi:** 30 July 2026
 **Contact / İletişim:** hasancelikjob@gmail.com
 
 ---
@@ -29,24 +29,34 @@ Uygulamamız aşağıdaki bilgileri toplayabilir:
 
 #### 2.2 Kullanıcının Sağladığı Bilgiler
 
-- Uygulama içinde girilen tercihler ve abonelik durumu (yerel olarak `AsyncStorage` üzerinde saklanır)
+Aşağıdaki bilgiler, siz sağladığınızda **sunucularımızda** (bkz. bölüm 4) saklanır:
+
+- **Profil bilgileri (isteğe bağlı):** Tanışma ekranında girdiğiniz ad, e-posta adresi, cinsiyet ve yaş aralığı. Bu alanları boş bırakabilirsiniz; uygulama yine de tam olarak çalışır.
+- **Şükür Panosu içeriği:** "Şükür Panosu" özelliğinde yazdığınız metinler. Bu metinler, gün içinde size hatırlatma bildirimi olarak geri gönderilebilmesi için sunucumuzda saklanır.
+  > ⚠️ **Önemli:** Şükür Panosu'na yazdığınız her şey sunucumuzda saklandığı ve bildirim olarak cihazınızın kilit ekranında görüntülenebileceği için, **hassas finansal bilgi (hesap bakiyesi, gelir tutarı vb.), şifre veya başkalarının görmesini istemediğiniz özel bilgiler yazmamanızı öneririz.** Dilediğiniz zaman tek tek silebilirsiniz.
+- **Uygulama içi ilerleme:** Günlük görev/zikir tamamlama bilgileriniz ve uygulamayı en son kullandığınız zaman (hatırlatma bildirimlerinin doğru zamanlanması için).
+- **Tercihler ve abonelik durumu:** Cihazınızda `AsyncStorage` üzerinde yerel olarak saklanır.
 
 #### 2.3 Toplamadığımız Bilgiler
 
-- Adınız, soyadınız, e-posta adresiniz veya telefon numaranız gibi kişisel kimlik bilgileri (PII)
 - Konum bilgisi (uygulama konum izni istemez ve kullanmaz)
 - Kameranız, mikrofonunuz, kişileriniz, fotoğraflarınız
 - Banka veya ödeme kartı bilgileri (abonelik ödemeleri tamamen Apple App Store / Google Play üzerinden yürütülür; kart bilgilerinizi görmeyiz)
+- Parola veya kimlik doğrulama bilgisi (uygulamada hesap/şifre sistemi yoktur)
 
 ### 3. Bilgilerin Kullanım Amacı
 
 Toplanan bilgiler yalnızca aşağıdaki amaçlar için kullanılır:
 
 - Uygulamanın çalışmasını sağlamak ve sürdürmek
-- Push bildirimleri (hatırlatmalar, güncellemeler) göndermek
+- Push bildirimleri (manevi hatırlatmalar, günün ayeti, güncellemeler) göndermek
+- **Şükür Panosu'na yazdığınız metinleri, gün içinde size hatırlatma bildirimi olarak geri göndermek**
+- Uygulamayı bir süredir kullanmadığınızda hatırlatma göndermek
 - Hataları teşhis etmek ve uygulama performansını iyileştirmek
-- İçeriği cihaz dilinize göre yerelleştirmek
+- İçeriği seçtiğiniz dile göre yerelleştirmek (bildirimler dahil)
 - Yeni sürüm güncellemelerini bildirmek
+
+Verilerinizi **satmayız**, reklam hedefleme için üçüncü taraflarla **paylaşmayız**.
 
 ### 4. Üçüncü Taraf Hizmetler
 
@@ -58,14 +68,20 @@ Uygulamamız aşağıdaki üçüncü taraf hizmetleri kullanır:
 | **Google Firebase (Cloud Messaging, App)** | Push bildirim ve uygulama altyapısı | [firebase.google.com/support/privacy](https://firebase.google.com/support/privacy) |
 | **Google Play Services** | Android dağıtımı ve servisler | [policies.google.com/privacy](https://policies.google.com/privacy) |
 | **Apple App Store** | iOS dağıtımı | [apple.com/legal/privacy](https://www.apple.com/legal/privacy/) |
+| **Render** | Uygulama sunucumuzun barındırılması | [render.com/privacy](https://render.com/privacy) |
+| **MongoDB Atlas** | Profil bilgileri ve Şükür Panosu içeriğinin veritabanı | [mongodb.com/legal/privacy-policy](https://www.mongodb.com/legal/privacy-policy) |
 
 Bu hizmetler kendi gizlilik politikalarına tabidir; yukarıdaki bağlantılardan inceleyebilirsiniz.
 
 ### 5. Veri Saklama ve Güvenlik
 
-- Cihazınızda saklanan veriler (`AsyncStorage`) yalnızca cihazınızda kalır ve bizim sunucularımıza iletilmez.
-- FCM tokenı, yalnızca size bildirim gönderebilmek için Firebase üzerinde saklanır ve uygulamayı kaldırdığınızda geçersiz hale gelir.
+- Bölüm 2.2'de sayılan bilgiler (profil bilgileri, Şükür Panosu içeriği, ilerleme kayıtları) **sunucularımızda** saklanır. Kayıtlarınız, uygulamada hesap sistemi bulunmadığı için cihazınızın bildirim tanımlayıcısı (FCM tokenı) ile ilişkilendirilir.
+- Uygulama tercihleri ve abonelik durumu gibi diğer veriler yalnızca cihazınızda (`AsyncStorage`) kalır.
+- FCM tokenı, size bildirim gönderebilmek için saklanır ve uygulamayı kaldırdığınızda geçersiz hale gelir.
+- Şükür Panosu kayıtlarınızı uygulama içinden **tek tek silebilirsiniz**; sildiğinizde kayıt sunucumuzdan da kalıcı olarak kaldırılır.
+- Verileriniz, siz silene veya silme talebinde bulunana kadar saklanır.
 - Tüm ağ iletişimi HTTPS üzerinden şifreli olarak yapılır (`NSAllowsArbitraryLoads = false`).
+- Tüm verilerinizin silinmesini istemek için **hasancelikjob@gmail.com** adresine yazabilirsiniz.
 
 ### 6. Çocukların Gizliliği
 
@@ -129,24 +145,34 @@ This Privacy Policy describes how **Baron Soft** ("we", "us", "our") collects, u
 
 #### 2.2 User-Provided
 
-- App preferences and subscription state stored locally on your device (`AsyncStorage`)
+The following is stored on **our servers** (see section 4) when you provide it:
+
+- **Profile details (optional):** the name, email address, gender and age range you enter during onboarding. You may leave these blank; the App works fully without them.
+- **Gratitude Board content:** the notes you write in the "Gratitude Board" feature. These are stored on our server so they can be sent back to you as reminder notifications during the day.
+  > ⚠️ **Important:** because everything you write on the Gratitude Board is stored on our server and may appear as a notification on your lock screen, we **recommend not entering sensitive financial details (account balances, income figures), passwords, or anything you would not want others to see.** You can delete entries individually at any time.
+- **In-app progress:** your daily task/dhikr completion records and when you last used the App (so reminders are timed correctly).
+- **Preferences and subscription state:** stored locally on your device (`AsyncStorage`).
 
 #### 2.3 What We Do **NOT** Collect
 
-- Personally identifiable information (name, email, phone)
 - Location data (the app does not request or use location)
 - Camera, microphone, contacts, photos
 - Payment or banking information (subscription billing is handled entirely by Apple App Store / Google Play; we never see your card details)
+- Passwords or authentication credentials (the App has no account or login system)
 
 ### 3. How We Use Information
 
 We use collected information only to:
 
 - Operate and maintain the App
-- Send push notifications (reminders, updates)
+- Send push notifications (spiritual reminders, verse of the day, updates)
+- **Send the notes you wrote on the Gratitude Board back to you as reminders during the day**
+- Remind you to return when you have not used the App for a while
 - Diagnose errors and improve performance
-- Localize content based on your device language
+- Localize content based on your chosen language (including notifications)
 - Notify you of new app versions
+
+We do **not** sell your data and do **not** share it with third parties for ad targeting.
 
 ### 4. Third-Party Services
 
@@ -156,14 +182,20 @@ We use collected information only to:
 | **Google Firebase (Cloud Messaging, App)** | Push notifications & app infra | [firebase.google.com/support/privacy](https://firebase.google.com/support/privacy) |
 | **Google Play Services** | Android distribution | [policies.google.com/privacy](https://policies.google.com/privacy) |
 | **Apple App Store** | iOS distribution | [apple.com/legal/privacy](https://www.apple.com/legal/privacy/) |
+| **Render** | Hosting for our application server | [render.com/privacy](https://render.com/privacy) |
+| **MongoDB Atlas** | Database for profile details and Gratitude Board content | [mongodb.com/legal/privacy-policy](https://www.mongodb.com/legal/privacy-policy) |
 
 These services are governed by their own privacy policies linked above.
 
 ### 5. Data Retention & Security
 
-- Data stored on your device (`AsyncStorage`) stays on your device and is **not** transmitted to our servers.
-- The FCM token is stored on Firebase only to deliver notifications and becomes invalid when you uninstall the App.
+- The information listed in section 2.2 (profile details, Gratitude Board content, progress records) is stored on **our servers**. Because the App has no account system, your records are associated with your device's notification identifier (FCM token).
+- Other data, such as app preferences and subscription state, stays on your device (`AsyncStorage`).
+- The FCM token is stored to deliver notifications and becomes invalid when you uninstall the App.
+- You can **delete Gratitude Board entries individually** in the App; deleting an entry permanently removes it from our server as well.
+- Data is retained until you delete it or request deletion.
 - All network traffic uses HTTPS (`NSAllowsArbitraryLoads = false`).
+- To request deletion of all your data, email **hasancelikjob@gmail.com**.
 
 ### 6. Children's Privacy
 
@@ -208,4 +240,4 @@ Questions: **hasancelikjob@gmail.com**
 
 ---
 
-_Last updated: 22 July 2026_
+_Last updated: 30 July 2026_
